@@ -2,6 +2,9 @@ package pt.pa.adts;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 /**
  * Isto é uma Classe "StackArrayList" herdada da interface "Stack".
  *
@@ -42,7 +45,9 @@ public class StackArrayList<T> implements Stack<T> {
      */
     @Override
     public void push(T element) throws FullStackException {
-        if(this.size >= this.elements.length) throw new FullStackException();
+        if(this.size >= this.elements.length) {
+            elements = Arrays.copyOf(elements, (int)(size * 1.5));
+        }
 
         this.elements[this.size++] = element;
     }
@@ -76,7 +81,7 @@ public class StackArrayList<T> implements Stack<T> {
      */
     @Override
     public int size() {
-        return this.size;
+        return (int)Arrays.stream(this.elements).filter(Objects::isNull).count();
     }
 
     /**

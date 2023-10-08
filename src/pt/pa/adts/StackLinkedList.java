@@ -45,7 +45,11 @@ public class StackLinkedList<T> implements Stack<T> {
 
     @Override
     public int size() {
-        return this.size;
+        int size = 0;
+        while (this.top.next != null) {
+            size++;
+        }
+        return size;
     }
 
     @Override
