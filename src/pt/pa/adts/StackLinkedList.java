@@ -22,7 +22,8 @@ public class StackLinkedList<T> implements Stack<T> {
         Element should be stored in a new node which is pointed by top sentinel.
         Must maintain the chaining of all nodes.
          */
-        throw new NotImplementedException();
+        this.top = new Node(element, top);
+        this.size++;
     }
 
     @Override
@@ -31,27 +32,30 @@ public class StackLinkedList<T> implements Stack<T> {
         The element at the top of the stack is the element stored in the
         node immediately after the top sentinel.
          */
-        throw new NotImplementedException();
+        T element = top.element;
+        this.top = top.next;
+        this.size--;
+        return element;
     }
 
     @Override
     public T peek() throws EmptyStackException {
-        throw new NotImplementedException();
+        return top.element;
     }
 
     @Override
     public int size() {
-        throw new NotImplementedException();
+        return this.size;
     }
 
     @Override
     public boolean isEmpty() {
-        throw new NotImplementedException();
+        return this.size == 0;
     }
 
     @Override
     public void clear() {
-        throw new NotImplementedException();
+        this.size = 0;
     }
 
     /**

@@ -92,10 +92,6 @@ public class StackArrayList<T> implements Stack<T> {
      */
     @Override
     public void clear() {
-        while(this.elements.length > 0) {
-            if(this.size == 0) throw new EmptyStackException();
-            this.elements[this.size - 1] = null;
-            this.size--;
-        }
+        this.size = 0;
     }
 }
