@@ -32,7 +32,7 @@ public class StackLinkedList<T> implements Stack<T> {
         The element at the top of the stack is the element stored in the
         node immediately after the top sentinel.
          */
-        T element = top.element;
+            T element = top.element;
         this.top = top.next;
         this.size--;
         return element;
