@@ -19,6 +19,9 @@ public class Main {
 
             System.out.println("Top of stack is: " + stack.peek());
 
+            //System.out.println("Clear stack!");
+            //stack.clear();
+
             System.out.println("Pop all elements from stack:");
             while(!stack.isEmpty()) {
                 System.out.println(stack.pop());

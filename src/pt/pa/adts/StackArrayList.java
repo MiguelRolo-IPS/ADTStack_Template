@@ -68,7 +68,7 @@ public class StackArrayList<T> implements Stack<T> {
      */
     @Override
     public T peek() throws EmptyStackException {
-        throw new NotImplementedException();
+        return this.elements[this.size - 1];
     }
 
     /**
@@ -84,7 +84,7 @@ public class StackArrayList<T> implements Stack<T> {
      */
     @Override
     public boolean isEmpty() {
-        throw new NotImplementedException();
+        return this.size == 0;
     }
 
     /**
@@ -92,6 +92,10 @@ public class StackArrayList<T> implements Stack<T> {
      */
     @Override
     public void clear() {
-        throw new NotImplementedException();
+        while(this.elements.length > 0) {
+            if(this.size == 0) throw new EmptyStackException();
+            this.elements[this.size - 1] = null;
+            this.size--;
+        }
     }
 }
